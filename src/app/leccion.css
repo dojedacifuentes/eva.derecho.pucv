@@ -24,6 +24,20 @@
   gap: 0.9rem;
   margin-bottom: 2.5rem;
 }
+/* Cabeza centrada de las cuatro secciones (cursos, videocápsulas, docentes, estudiantes). */
+.pagina__cabeza--centro {
+  justify-items: center;
+  text-align: center;
+}
+.pagina__cabeza--centro .pagina__titulo {
+  max-width: 24ch;
+}
+.bloque--centro {
+  text-align: center;
+}
+.bloque--centro .bloque__texto {
+  margin-inline: auto;
+}
 .pagina__titulo,
 .leccion__titulo {
   font-size: clamp(2rem, 5vw, 3.5rem);

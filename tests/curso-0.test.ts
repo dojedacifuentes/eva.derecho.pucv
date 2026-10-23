@@ -32,8 +32,8 @@ describe('Curso 0 · ¿Qué es la inteligencia artificial?', () => {
     expect(c0.numero).toBe(0);
     expect(c0.unidades.map((u) => u.id)).toEqual(['c0-u1', 'c0-u2', 'c0-u3', 'c0-u4']);
     for (const u of c0.unidades) expect(u.estado).toBe('disponible');
-    // Los dieciséis ids originales siguen ahí.
-    expect(CURSOS.flatMap((c) => c.unidades).length).toBe(20);
+    // Los ids originales siguen ahí (más las maquetas de los cursos 5 a 7, 23-10-2026).
+    expect(CURSOS.flatMap((c) => c.unidades).length).toBe(32);
   });
 
   it.each(UNIDADES)('$id: la evaluación tiene cinco preguntas y su clave corresponde a opciones que existen', ({ id, evaluacion, clave }) => {

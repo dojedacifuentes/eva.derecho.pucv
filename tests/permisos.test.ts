@@ -25,8 +25,8 @@ const ids = (filas: { estudiante_id?: unknown; id?: unknown }[], campo: 'estudia
 describe('visitante sin sesión (anon)', () => {
   it('lee el catálogo', async () => {
     const filas = await como(db, null, (q) => q('select id from public.lecciones order by id'));
-    // Dieciséis unidades de los cuatro cursos más las cuatro del Curso 0 (de entrada).
-    expect(filas).toHaveLength(20);
+    // Ocho cursos de cuatro unidades: el Curso 0, los cuatro de la serie PUCV y las tres maquetas (23-10-2026).
+    expect(filas).toHaveLength(32);
   });
 
   it('no lee perfiles, avance, intentos ni bitácoras', async () => {

@@ -1,64 +1,83 @@
 @import 'tailwindcss';
 
 /*
- * EVA × Derecho PUCV · sistema visual.
- * Base «dark tech minimal» (casi negro, rampa de grises, filetes de 1 px, resplandores suaves), la marca de EVA
- * (azul eléctrico → violeta) y la de Derecho PUCV (rojo del escudo, oro). Dos temas: oscuro (por defecto) y claro
- * (papel, para leer). Las zonas `.zona-oscura` (cabecera, portada, EVA) son oscuras en ambos temas.
- * Ver docs/05-sistema-visual.md.
+ * EVA × Derecho PUCV · sistema visual «Plano» (23-10-2026, elegido por el propietario entre seis maquetas).
+ * La identidad sale de la estructura, no de efectos: papel con retícula de dibujo técnico, tinta azul noche, trazos de
+ * un píxel y el escudo de la Facultad dibujado como plano en la portada (el único elemento llamativo). Una sola familia,
+ * IBM Plex (OFL): la sans para todo, la mono sólo para cotas y datos del plano, la serif para las lecturas. Sin fotos,
+ * sin degradados, sin sombras, sin palabras destacadas en los titulares. Las páginas de sección usan el formato «Índice».
+ * Guía aplicada: la skill frontend-design de Anthropic (un solo gesto memorable, todo lo demás sereno).
+ *   - claro: papel blanco y tinta azul noche de Derecho PUCV;
+ *   - oscuro: negro puro, tinta clara y el índigo de EVA para lo que se puede tocar.
+ * El rojo del escudo queda sólo en la marca. `.zona-oscura` fuerza el tema oscuro en un bloque (p. ej. «EVA presenta»).
  */
 
 @theme {
-  --font-sans: var(--fuente-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--fuente-mono), ui-monospace, monospace;
-  --font-serif: var(--fuente-serif), Georgia, serif;
+  --font-sans: var(--fuente-sans), 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--fuente-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  --font-serif: var(--fuente-serif), 'IBM Plex Serif', Georgia, serif;
 }
 
 /* ------------------------------------------------------------------ tokens */
 
 :root,
-.zona-oscura {
-  --fondo: #050507;
-  --superficie: #0f1013;
-  --superficie-2: #16171b;
-  --vidrio: rgba(22, 24, 30, 0.55);
-  --filete: rgba(255, 255, 255, 0.08);
-  --filete-fuerte: rgba(255, 255, 255, 0.16);
-  --texto: #f7f8f8;
-  --suave: #c9ccd1;
-  --tenue: #8a8f98;
-  --acento: #8b8ff8;
-  --acento-texto: #b4b7ff;
-  --resplandor-1: rgba(42, 140, 255, 0.18);
-  --resplandor-2: rgba(162, 77, 255, 0.16);
-  --reticula: rgba(255, 255, 255, 0.035);
-  --palabra-pucv: brightness(0) invert(1);
-  --verde: #5be08f;
-  --ambar: #f5c04a;
-  --rojo: #ff7a7a;
-  color-scheme: dark;
-}
-
 [data-tema='claro'] {
-  --fondo: #f6f5f2;
+  --fondo: #ffffff;
   --superficie: #ffffff;
-  --superficie-2: #eeece7;
-  --vidrio: rgba(255, 255, 255, 0.7);
-  --filete: rgba(20, 22, 26, 0.1);
-  --filete-fuerte: rgba(20, 22, 26, 0.2);
-  --texto: #14161a;
-  --suave: #353a43;
-  --tenue: #5b616b;
-  --acento: #a81916;
-  --acento-texto: #a81916;
-  --resplandor-1: rgba(168, 25, 22, 0.07);
-  --resplandor-2: rgba(90, 96, 255, 0.07);
-  --reticula: rgba(20, 22, 26, 0.04);
+  --superficie-2: #f5f6f9;
+  --seccion-alt: transparent;
+  --tarjeta: transparent;
+  --tarjeta-alt: transparent;
+  --tarjeta-borde: rgba(16, 37, 82, 0.16);
+  --vidrio: rgba(255, 255, 255, 0.94);
+  --vidrio-borde: rgba(16, 37, 82, 0.16);
+  --filete: rgba(16, 37, 82, 0.14);
+  --filete-fuerte: #102552;
+  --texto: #102552;
+  --suave: #2b3c63;
+  --tenue: #56637f;
+  --acento: #102552;
+  --acento-texto: #102552;
+  --acento-suave: rgba(16, 37, 82, 0.05);
+  --resplandor-1: transparent;
+  --resplandor-2: transparent;
+  --sombra: none;
+  --reticula: rgba(16, 37, 82, 0.045);
   --palabra-pucv: none;
-  --verde: #12703c;
+  --verde: #1d6b46;
   --ambar: #8a5300;
   --rojo: #a81916;
   color-scheme: light;
+}
+
+[data-tema='oscuro'],
+.zona-oscura {
+  --fondo: #000000;
+  --superficie: #000000;
+  --superficie-2: #101114;
+  --seccion-alt: transparent;
+  --tarjeta: transparent;
+  --tarjeta-alt: transparent;
+  --tarjeta-borde: rgba(226, 232, 245, 0.18);
+  --vidrio: rgba(0, 0, 0, 0.92);
+  --vidrio-borde: rgba(226, 232, 245, 0.18);
+  --filete: rgba(226, 232, 245, 0.16);
+  --filete-fuerte: #e2e8f5;
+  --texto: #e2e8f5;
+  --suave: #bcc5da;
+  --tenue: #8c97b0;
+  --acento: #6a72ff;
+  --acento-texto: #aab3ff;
+  --acento-suave: rgba(106, 114, 255, 0.12);
+  --resplandor-1: transparent;
+  --resplandor-2: transparent;
+  --sombra: none;
+  --reticula: rgba(226, 232, 245, 0.05);
+  --palabra-pucv: brightness(0) invert(1);
+  --verde: #6fd39b;
+  --ambar: #f5c04a;
+  --rojo: #ff7a7a;
+  color-scheme: dark;
 }
 
 :root {
@@ -70,17 +89,18 @@
   --pucv-rojo-claro: #c4382a;
   --pucv-oro: #c9a45c;
 
-  --hoja: #fbfaf7;
+  --hoja: #ffffff;
   --tinta: #14161a;
   --tinta-suave: #3a4150;
   --enlace-hoja: #1d48c8;
 
   --ancho: 80rem;
   --medida: 40rem;
-  --margen: clamp(1rem, 4vw, 2.5rem);
-  --cabecera: 4rem;
-  --radio: 14px;
-  --radio-sm: 8px;
+  --margen: clamp(1rem, 4vw, 3rem);
+  --cabecera: 3.75rem;
+  --radio: 2px;
+  --radio-sm: 2px;
+  --modulo: 24px;
   --facil: cubic-bezier(0.22, 0.8, 0.24, 1);
 }
 
@@ -94,10 +114,11 @@ body {
   color: var(--texto);
   font-family: var(--font-sans);
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.55;
   min-height: 100dvh;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  font-variant-numeric: tabular-nums;
 }
 
 .zona-oscura {
@@ -105,18 +126,19 @@ body {
   color: var(--texto);
 }
 
-/* Fondo: negro profundo con dos resplandores suaves de la marca (sin retícula). Decorativo. */
+/* Papel de dibujo: retícula de 24 px en la tinta del tema, casi invisible. Quieta y centrada. */
 .fondo-reticula {
-  background:
-    radial-gradient(70rem 40rem at 50% -20%, var(--resplandor-1), transparent 60%),
-    radial-gradient(40rem 30rem at 100% 30%, var(--resplandor-2), transparent 65%),
-    var(--fondo);
-  background-attachment: fixed;
+  background-color: var(--fondo);
+  background-image:
+    linear-gradient(var(--reticula) 1px, transparent 1px),
+    linear-gradient(90deg, var(--reticula) 1px, transparent 1px);
+  background-size: var(--modulo) var(--modulo);
+  background-position: center top;
 }
 
 ::selection {
-  background: rgba(90, 96, 255, 0.5);
-  color: #fff;
+  background: var(--texto);
+  color: var(--fondo);
 }
 
 a {
@@ -126,12 +148,11 @@ a {
 :focus-visible {
   outline: 2px solid var(--acento-texto);
   outline-offset: 3px;
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 .mono {
   font-family: var(--font-mono);
-  letter-spacing: 0.02em;
 }
 
 .sr-only {
@@ -170,11 +191,10 @@ a {
 
 /* ------------------------------------------------------------------ tipografía */
 
+/* Antetítulo: corto, en minúsculas y en el color tenue. Sólo donde dice algo útil (dónde está uno). */
 .rotulo {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 500;
   color: var(--tenue);
 }
 .rotulo--acento {
@@ -182,20 +202,21 @@ a {
 }
 
 .titular {
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 1.02;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
   text-wrap: balance;
 }
 
 .degradado-texto {
-  background: linear-gradient(90deg, #f7f8f8 0%, #b9bcff 55%, #d1a8ff 100%);
+  background: linear-gradient(90deg, #143078 0%, #3346d1 55%, #6b4fe0 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-[data-tema='claro'] .degradado-texto:not(.zona-oscura *) {
-  background: linear-gradient(90deg, #14161a 0%, #a81916 100%);
+[data-tema='oscuro'] .degradado-texto,
+.zona-oscura .degradado-texto {
+  background: linear-gradient(90deg, #7fb2ff 0%, #9ea4ff 50%, #c9a2ff 100%);
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -209,23 +230,13 @@ a {
 
 /* ------------------------------------------------------------------ superficies */
 
-.panel {
-  position: relative;
-  background: var(--superficie);
-  border: 1px solid var(--filete);
-  border-radius: var(--radio);
-}
-
+/* Panel: una hoja del plano, papel opaco con trazo de un píxel. Sin sombras ni desenfoques. */
+.panel,
 .vidrio {
   position: relative;
-  background: var(--vidrio);
   border: 1px solid var(--filete);
   border-radius: var(--radio);
-  backdrop-filter: blur(18px) saturate(140%);
-  -webkit-backdrop-filter: blur(18px) saturate(140%);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 30px 60px -40px rgba(0, 0, 0, 0.6);
+  background: var(--fondo);
 }
 
 /* Filete de luz arriba, de azul a violeta, como el halo de la marca. */
@@ -359,12 +370,12 @@ a {
   justify-content: center;
   gap: 0.55rem;
   min-height: 2.75rem;
-  padding: 0.6rem 1.2rem;
+  padding: 0.6rem 1.4rem;
   border: 1px solid var(--filete-fuerte);
-  border-radius: 999px;
-  background: transparent;
+  border-radius: var(--radio);
+  background: var(--fondo);
   color: var(--texto);
-  font-weight: 550;
+  font-weight: 500;
   font-size: 0.9375rem;
   text-decoration: none;
   cursor: pointer;
@@ -374,29 +385,30 @@ a {
     box-shadow 160ms var(--facil);
 }
 .boton:hover {
-  border-color: var(--acento);
-  background: color-mix(in srgb, var(--acento) 10%, transparent);
+  background: var(--acento-suave);
 }
 .boton:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
+/* Primario: tinta llena (azul noche en claro; en oscuro, el índigo de EVA). */
 .boton--primario {
-  border-color: transparent;
-  color: #08090a;
-  background: #f7f8f8;
+  border-color: var(--filete-fuerte);
+  color: var(--fondo);
+  background: var(--texto);
 }
 .boton--primario:hover {
-  background: #fff;
-  box-shadow: 0 0 0 4px rgba(139, 143, 248, 0.25), 0 0 40px -6px rgba(90, 96, 255, 0.8);
+  background: var(--suave);
 }
-[data-tema='claro'] .boton--primario:not(.zona-oscura *) {
-  color: #fff;
-  background: #14161a;
+[data-tema='oscuro'] .boton--primario,
+.zona-oscura .boton--primario {
+  color: #ffffff;
+  border-color: #5a62f0;
+  background: #5a62f0;
 }
-[data-tema='claro'] .boton--primario:not(.zona-oscura *):hover {
-  background: var(--pucv-rojo);
-  box-shadow: none;
+[data-tema='oscuro'] .boton--primario:hover,
+.zona-oscura .boton--primario:hover {
+  background: #6a72ff;
 }
 .hoja .boton {
   color: var(--tinta);
@@ -414,13 +426,12 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.12rem 0.55rem;
+  padding: 0.1rem 0.5rem;
   border: 1px solid currentColor;
-  border-radius: 999px;
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  border-radius: var(--radio);
+  background: transparent;
+  font-size: 0.75rem;
+  font-weight: 500;
   white-space: nowrap;
 }
 .etiqueta[data-tono='operativa'],

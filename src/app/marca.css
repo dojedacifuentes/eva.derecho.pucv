@@ -329,3 +329,12 @@
     opacity: 0.85;
   }
 }
+
+/* ---------------------------------------------------------------- tema claro */
+/* La marca de EVA nace para fondo negro (azul eléctrico con halo): sobre blanco se oscurece para que se lea. */
+[data-tema='claro'] .conjunta__eva:not(.zona-oscura *) {
+  filter: brightness(0.62) saturate(1.5);
+}
+[data-tema='claro'] .conjunta__separador:not(.zona-oscura *) {
+  box-shadow: none;
+}

@@ -1,22 +1,33 @@
 import Link from 'next/link';
-import { MarcaConjunta } from '@/components/marca/MarcaConjunta';
+import { MarcaSobria } from '@/components/marca/MarcaSobria';
 import { Menu } from './Menu';
 import { SelectorTema } from './SelectorTema';
 
+/** Las cuatro secciones del sitio, en el mismo orden en la cabecera, la portada y el pie. */
 export const NAVEGACION = [
   { href: '/cursos', texto: 'Cursos' },
-  { href: '/recursos', texto: 'Recursos' },
+  { href: '/videocapsulas', texto: 'Videocápsulas' },
   { href: '/docentes', texto: 'Docentes' },
-  { href: '/biblioteca', texto: 'Biblioteca' },
-  { href: '/mi-avance', texto: 'Mi avance' },
+  { href: '/estudiantes', texto: 'Estudiantes' },
 ];
 
+/** Lo que va sólo en el menú del teléfono, después de las cuatro secciones. */
+const EXTRAS = [
+  { href: '/mi-avance', texto: 'Mi avance' },
+  { href: '/herramientas', texto: 'Herramientas' },
+  { href: '/recursos', texto: 'Tutoriales y EVA ACADEMY' },
+  { href: '/biblioteca', texto: 'Biblioteca' },
+  { href: '/acerca', texto: 'Acerca' },
+  { href: '/ingresar', texto: 'Ingresar' },
+];
+
+/* Barra del plano: marca a la izquierda, las cuatro secciones al centro exacto, avance, tema e ingreso a la derecha. */
 export function Cabecera({ demo }: { demo: boolean }) {
   return (
-    <header className="cabecera zona-oscura">
+    <header className="cabecera">
       <div className="envoltura cabecera__fila">
-        <Link href="/" className="cabecera__marca" aria-label="Inicio · EVA × Derecho PUCV">
-          <MarcaConjunta tamano="cabecera" />
+        <Link href="/" className="cabecera__marca" aria-label="Inicio · Derecho PUCV × EVA">
+          <MarcaSobria />
         </Link>
         <nav aria-label="Principal" className="cabecera__nav">
           <ul>
@@ -28,11 +39,14 @@ export function Cabecera({ demo }: { demo: boolean }) {
           </ul>
         </nav>
         <div className="cabecera__acciones">
-          <SelectorTema />
-          <Link href="/ingresar" className="boton cabecera__ingresar">
-            {demo ? 'Demo' : 'Ingresar'}
+          <Link href="/mi-avance" className="cabecera__ingresar cabecera__avance">
+            Mi avance
           </Link>
-          <Menu enlaces={NAVEGACION} />
+          <SelectorTema />
+          <Link href="/ingresar" className="cabecera__ingresar" title={demo ? 'Modo demostración: el avance queda en este navegador' : undefined}>
+            Ingresar
+          </Link>
+          <Menu enlaces={[...NAVEGACION, ...EXTRAS]} />
         </div>
       </div>
     </header>

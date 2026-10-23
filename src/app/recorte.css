@@ -1,0 +1,43 @@
+/* GENERADO por scripts/capsize.mjs (Capsize, IBM Plex Sans): no se edita a mano. */
+
+.recorte-105 {
+  line-height: 1.05;
+}
+.recorte-105::before {
+  content: '';
+  display: table;
+  margin-bottom: -0.202em;
+}
+.recorte-105::after {
+  content: '';
+  display: table;
+  margin-top: -0.15em;
+}
+
+.recorte-115 {
+  line-height: 1.15;
+}
+.recorte-115::before {
+  content: '';
+  display: table;
+  margin-bottom: -0.252em;
+}
+.recorte-115::after {
+  content: '';
+  display: table;
+  margin-top: -0.2em;
+}
+
+.recorte-130 {
+  line-height: 1.3;
+}
+.recorte-130::before {
+  content: '';
+  display: table;
+  margin-bottom: -0.327em;
+}
+.recorte-130::after {
+  content: '';
+  display: table;
+  margin-top: -0.275em;
+}

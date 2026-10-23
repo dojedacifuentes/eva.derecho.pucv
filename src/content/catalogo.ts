@@ -1,10 +1,12 @@
 /**
- * Arquitectura académica: cuatro cursos × cuatro unidades = dieciséis videocápsulas de EVA, más el Curso 0, de
- * entrada («¿Qué es la inteligencia artificial?», cuatro unidades sacadas del apunte del mismo nombre, 23-10-2026).
+ * Arquitectura académica: ocho cursos (0 a 7) × cuatro módulos. El Curso 0, de entrada, sale del apunte «¿Qué es la
+ * inteligencia artificial?» (23-10-2026); los cursos 1 a 4 son la serie de videocápsulas PUCV; los cursos 5 a 7 son
+ * maquetas pedidas por el propietario el 23-10-2026 (títulos y objetivos planificados, sin desarrollar ni revisar).
  *
- * Los ids (`c1-u1`…) son la llave del avance guardado en la base: no se renombran. c0-u1 a c0-u4, c1-u1 y el curso 3
- * completo (c3-u1 a c3-u4) están disponibles; las demás muestran su objetivo planificado (del informe de diseño instruccional de la serie
- * PUCV) y el rótulo «En preparación». `npm run db:catalogo` lleva este catálogo a la migración SQL.
+ * Los ids (`c1-u1`…) son la llave del avance guardado en la base: no se renombran (los títulos sí: se cambiaron a
+ * otros más descriptivos el 23-10-2026). c0-u1 a c0-u4, c1-u1 y el curso 3 completo (c3-u1 a c3-u4) están
+ * disponibles; las demás muestran su objetivo planificado y el rótulo «En preparación». `npm run db:catalogo` lleva
+ * este catálogo a la migración SQL.
  */
 
 export type EstadoUnidad = 'disponible' | 'preparacion';
@@ -36,7 +38,7 @@ export const CURSOS: Curso[] = [
     id: 'c0',
     numero: 0,
     slug: 'que-es-la-ia',
-    titulo: '¿Qué es la inteligencia artificial?',
+    titulo: 'Qué es la IA: lo que dicen las leyes y la ciencia',
     pregunta: '¿Qué dice la ley que es, qué no sabe nadie y de dónde viene la palabra?',
     resultado:
       'Explica qué es un «sistema de IA» según las leyes vigentes y en proyecto, qué queda abierto en la ciencia y por qué el Derecho chileno ya exige verificar y decidir con juicio humano.',
@@ -87,7 +89,7 @@ export const CURSOS: Curso[] = [
     id: 'c1',
     numero: 1,
     slug: 'comprender-la-ia',
-    titulo: 'Comprender la inteligencia artificial',
+    titulo: 'Cómo funciona la IA y por qué se equivoca',
     pregunta: '¿Qué es y por qué se equivoca?',
     resultado:
       'Explica cómo produce respuestas un modelo de lenguaje y por qué puede fallar, a partir de casos jurídicos, para decidir cómo pedirle un trabajo.',
@@ -138,7 +140,7 @@ export const CURSOS: Curso[] = [
     id: 'c2',
     numero: 2,
     slug: 'aprender-y-trabajar',
-    titulo: 'Aprender y trabajar con IA',
+    titulo: 'Estudiar y trabajar con IA sin perder el criterio',
     pregunta: '¿Cómo la uso sin dejar de aprender ni romper deberes?',
     resultado:
       'Usa la IA para estudiar y analizar documentos jurídicos, protegiendo los datos de las personas y sin delegar lo que no se delega.',
@@ -189,7 +191,7 @@ export const CURSOS: Curso[] = [
     id: 'c3',
     numero: 3,
     slug: 'investigar-derecho',
-    titulo: 'Investigar Derecho con IA',
+    titulo: 'Investigación jurídica con IA: fuentes, citas y fallos',
     pregunta: '¿Cómo investigo sin citas falsas?',
     resultado:
       'Investiga una pregunta jurídica chilena con apoyo de IA, verificando en fuentes oficiales y documentando el proceso.',
@@ -240,7 +242,7 @@ export const CURSOS: Curso[] = [
     id: 'c4',
     numero: 4,
     slug: 'crear-herramientas',
-    titulo: 'Crear herramientas jurídicas',
+    titulo: 'Crea tus propias herramientas jurídicas con IA',
     pregunta: '¿Cómo construyo algo útil y seguro?',
     resultado: 'Crea un prototipo LegalTech simple, probado y documentado, a partir de un problema real de su entorno.',
     unidades: [
@@ -283,6 +285,157 @@ export const CURSOS: Curso[] = [
           'Publica su herramienta con una descripción de su propósito y sus límites, y con el aviso de que no es asesoría jurídica.',
         estado: 'preparacion',
         uso: 'Escribir la ficha de límites y publicar.',
+      },
+    ],
+  },
+  // ---------------------------------------------------------------- maquetas (23-10-2026): sin desarrollar ni revisar
+  {
+    id: 'c5',
+    numero: 5,
+    slug: 'etica-y-responsabilidad',
+    titulo: 'Ética profesional y responsabilidad al usar IA',
+    pregunta: '¿Qué le debo a mi cliente y al tribunal cuando trabajo con IA?',
+    resultado:
+      'Decide cómo usar la IA en un asunto real respetando la confidencialidad, la diligencia y la transparencia con el cliente, y sabe quién responde cuando la herramienta se equivoca.',
+    unidades: [
+      {
+        id: 'c5-u1',
+        numero: 1,
+        slug: 'secreto-profesional',
+        titulo: 'Secreto profesional y confidencialidad',
+        objetivo:
+          'Decide qué información de un cliente puede entrar a una herramienta de IA y con qué resguardos, según el deber de confidencialidad.',
+        estado: 'preparacion',
+        uso: 'Revisar si se puede pegar en un chat un borrador de demanda con datos del cliente.',
+      },
+      {
+        id: 'c5-u2',
+        numero: 2,
+        slug: 'diligencia',
+        titulo: 'Diligencia: saber usarla y saber cuándo no',
+        objetivo:
+          'Explica por qué conocer las capacidades y los límites de la IA forma parte de la diligencia profesional, con ejemplos de errores evitables.',
+        estado: 'preparacion',
+        uso: 'Evaluar si un escrito preparado con IA cumple el estándar que se le exigiría a uno propio.',
+      },
+      {
+        id: 'c5-u3',
+        numero: 3,
+        slug: 'transparencia-con-el-cliente',
+        titulo: 'Transparencia: decirle al cliente cómo trabajas',
+        objetivo: 'Redacta un aviso breve que informa al cliente cuándo y cómo se usa IA en su asunto.',
+        estado: 'preparacion',
+        uso: 'Preparar el aviso de uso de IA para el convenio de servicios de una clínica jurídica.',
+      },
+      {
+        id: 'c5-u4',
+        numero: 4,
+        slug: 'quien-responde',
+        titulo: 'Cuando la IA se equivoca: quién responde',
+        objetivo:
+          'Analiza un error causado por una herramienta de IA e identifica quién responde y qué controles lo habrían evitado.',
+        estado: 'preparacion',
+        uso: 'Reconstruir qué falló en un escrito con citas inexistentes.',
+      },
+    ],
+  },
+  {
+    id: 'c6',
+    numero: 6,
+    slug: 'prueba-digital',
+    titulo: 'Prueba digital y deepfakes en el proceso',
+    pregunta: '¿Cómo sé si una prueba digital es auténtica?',
+    resultado:
+      'Evalúa la autenticidad de audios, imágenes y documentos digitales, sabe cuándo pedir un peritaje y argumenta su valor probatorio frente a la posibilidad de manipulación con IA.',
+    unidades: [
+      {
+        id: 'c6-u1',
+        numero: 1,
+        slug: 'que-es-un-deepfake',
+        titulo: 'Qué es un deepfake y cómo se fabrica',
+        objetivo: 'Explica cómo se generan audios, imágenes y videos sintéticos y qué rastros suelen dejar.',
+        estado: 'preparacion',
+        uso: 'Revisar un audio de WhatsApp que una parte presenta como prueba.',
+      },
+      {
+        id: 'c6-u2',
+        numero: 2,
+        slug: 'autenticidad-y-custodia',
+        titulo: 'Autenticidad y cadena de custodia',
+        objetivo:
+          'Distingue qué antecedentes permiten sostener la autenticidad de un archivo digital y cómo se resguarda desde que se obtiene.',
+        estado: 'preparacion',
+        uso: 'Preparar la presentación de capturas de pantalla como prueba.',
+      },
+      {
+        id: 'c6-u3',
+        numero: 3,
+        slug: 'peritaje-digital',
+        titulo: 'Cuándo pedir un peritaje digital',
+        objetivo: 'Decide, ante una prueba digital dudosa, cuándo pedir un peritaje y qué preguntarle al perito.',
+        estado: 'preparacion',
+        uso: 'Redactar las preguntas para un perito sobre un video impugnado.',
+      },
+      {
+        id: 'c6-u4',
+        numero: 4,
+        slug: 'valorar-la-prueba',
+        titulo: 'Valorar la prueba en tiempos de IA',
+        objetivo:
+          'Argumenta el valor probatorio de un documento digital considerando la posibilidad de que haya sido manipulado con IA.',
+        estado: 'preparacion',
+        uso: 'Preparar el alegato sobre un video que la contraparte dice falso.',
+      },
+    ],
+  },
+  {
+    id: 'c7',
+    numero: 7,
+    slug: 'regulacion-de-la-ia',
+    titulo: 'Regulación de la IA en Chile y el mundo',
+    pregunta: '¿Qué reglas existen ya y cuáles vienen?',
+    resultado:
+      'Explica los modelos de regulación de la IA, compara el europeo con el proyecto chileno y analiza decisiones automatizadas desde los datos personales y los derechos fundamentales.',
+    unidades: [
+      {
+        id: 'c7-u1',
+        numero: 1,
+        slug: 'el-modelo-europeo',
+        titulo: 'El modelo europeo: regular por nivel de riesgo',
+        objetivo:
+          'Explica la lógica de clasificación por riesgo del Reglamento europeo de IA y la aplica a usos jurídicos comunes.',
+        estado: 'preparacion',
+        uso: 'Clasificar el riesgo de un sistema que ordena causas en un tribunal.',
+      },
+      {
+        id: 'c7-u2',
+        numero: 2,
+        slug: 'el-proyecto-chileno',
+        titulo: 'El proyecto de ley chileno sobre IA',
+        objetivo:
+          'Compara el proyecto de ley chileno con el modelo europeo e identifica qué obligaciones crearía para quienes usan IA.',
+        estado: 'preparacion',
+        uso: 'Preparar una minuta para un estudio sobre cómo le afectaría el proyecto.',
+      },
+      {
+        id: 'c7-u3',
+        numero: 3,
+        slug: 'datos-personales',
+        titulo: 'Datos personales e IA',
+        objetivo:
+          'Relaciona la nueva ley chilena de protección de datos personales con el entrenamiento y el uso de sistemas de IA.',
+        estado: 'preparacion',
+        uso: 'Revisar si una herramienta puede procesar datos de los clientes de un estudio.',
+      },
+      {
+        id: 'c7-u4',
+        numero: 4,
+        slug: 'derechos-fundamentales',
+        titulo: 'IA y derechos fundamentales',
+        objetivo:
+          'Analiza una decisión automatizada desde la igualdad, el debido proceso y la privacidad.',
+        estado: 'preparacion',
+        uso: 'Evaluar un sistema que asigna beneficios sociales de forma automática.',
       },
     ],
   },

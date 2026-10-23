@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { CabezaSeccion } from '@/components/secciones/CabezaSeccion';
+import { ListaIndice } from '@/components/secciones/ListaIndice';
+import { PARA_DOCENTES } from '@/content/secciones';
 
-export const metadata: Metadata = { title: 'Para docentes' };
+export const metadata: Metadata = { title: 'Docentes' };
 
 const CLASE = [
   ['5 min', 'Punto de partida', 'Cada estudiante marca su confianza (1 a 5) en que una IA corrige bien. Anota la distribución en la pizarra: se retoma al cierre.'],
@@ -20,25 +23,18 @@ const MIRAR = [
 export default function Docentes() {
   return (
     <div className="pagina envoltura">
-      <header className="pagina__cabeza">
-        <p className="rotulo rotulo--acento">Para docentes · guía piloto</p>
-        <h1 className="titular pagina__titulo">Lleva la unidad 1.1 a tu clase.</h1>
-        <p className="entradilla">
-          Cuarenta y cinco minutos, sin cuentas para los estudiantes y sin pedirles datos. Si la Escuela configura el
-          ingreso institucional, verás el avance de tu sección en el panel.
-        </p>
-        <p>
-          <Link className="boton boton--primario" href="/cursos/comprender-la-ia/que-es-la-ia">
-            Ver la unidad 1.1
-          </Link>{' '}
-          <Link className="boton" href="/docente">
-            Panel de sección (demostración)
-          </Link>
-        </p>
-      </header>
+      <CabezaSeccion titulo="Docentes">
+        Guías escritas para llevar cada módulo a clase, planes de clase y lecturas recomendadas. Los estudiantes no
+        necesitan cuenta ni entregan datos; si la Escuela activa el ingreso institucional, verás el avance de tu sección.
+      </CabezaSeccion>
+      <ListaIndice entradas={PARA_DOCENTES} />
 
-      <section className="bloque" aria-labelledby="t-clase">
-        <h2 id="t-clase" className="bloque__titulo">Plan de clase</h2>
+      <section id="guia" className="bloque" aria-labelledby="t-clase">
+        <h2 id="t-clase" className="bloque__titulo">Guía piloto: el módulo 1.1 en 45 minutos</h2>
+        <p className="bloque__texto">
+          Para <Link href="/cursos/comprender-la-ia/que-es-la-ia">el módulo 1.1</Link>. El avance de la clase se ve en
+          el <Link href="/docente">panel de sección</Link> (en el prototipo, con datos ficticios).
+        </p>
         <ol className="plan-clase">
           {CLASE.map(([min, paso, texto]) => (
             <li key={paso} className="panel">
@@ -69,6 +65,18 @@ export default function Docentes() {
           <li>Ajusta la tabla «qué puedes subir a una IA» al reglamento de integridad académica de la Escuela.</li>
           <li>Prueba el encargo del examinador en el asistente que usarán tus estudiantes: los límites de uso cambian.</li>
         </ul>
+      </section>
+
+      <section id="guias" className="bloque" aria-labelledby="t-guias">
+        <h2 id="t-guias" className="bloque__titulo">Guías por módulo</h2>
+        <p className="bloque__texto">
+          Una guía escrita por módulo, para imprimir o compartir: el objetivo, lo esencial, un ejercicio, la
+          autoevaluación y las fuentes verificadas. Saldrán de las mismas páginas de cada módulo, así que no se
+          desactualizan.{' '}
+          <span className="etiqueta" data-tono="preparacion">
+            En preparación
+          </span>
+        </p>
       </section>
     </div>
   );

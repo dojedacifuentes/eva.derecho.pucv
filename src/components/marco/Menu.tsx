@@ -27,16 +27,19 @@ export function Menu({ enlaces }: { enlaces: { href: string; texto: string }[] }
       <button
         ref={boton}
         type="button"
-        className="boton menu__boton"
+        className="icono-boton menu__boton"
         aria-expanded={abierto}
         aria-controls="menu-movil"
+        aria-label={abierto ? 'Cerrar el menú' : 'Abrir el menú'}
         onClick={() => setAbierto((a) => !a)}
       >
-        {abierto ? 'Cerrar' : 'Menú'}
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          {abierto ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4.5 9h15M4.5 15h15" />}
+        </svg>
       </button>
       {abierto && (
         <ul id="menu-movil" ref={lista} className="menu__lista vidrio">
-          {[...enlaces, { href: '/herramientas', texto: 'Herramientas' }, { href: '/acerca', texto: 'Acerca' }].map((e) => (
+          {enlaces.map((e) => (
             <li key={e.href}>
               <Link href={e.href} onClick={() => setAbierto(false)}>
                 {e.texto}

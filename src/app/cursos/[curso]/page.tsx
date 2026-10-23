@@ -55,7 +55,7 @@ export default async function FichaCurso({ params }: { params: Promise<{ curso: 
             </span>
             {u.estado === 'disponible' ? (
               <Link className="boton boton--primario" href={rutaUnidad(curso, u)}>
-                Empezar →
+                Empezar
               </Link>
             ) : (
               <span className="etiqueta" data-tono="preparacion">

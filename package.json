@@ -16,7 +16,8 @@
     "test:watch": "vitest",
     "e2e": "playwright test",
     "db:catalogo": "node scripts/catalogo-sql.mjs",
-    "check": "node scripts/catalogo-sql.mjs --check && npm run lint && npm run typecheck && npm run test && npm run build"
+    "check": "node scripts/catalogo-sql.mjs --check && npm run lint && npm run typecheck && npm run test && npm run build",
+    "capsize": "node scripts/capsize.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "3.1.1",
@@ -31,6 +32,8 @@
     "server-only": "0.0.1"
   },
   "devDependencies": {
+    "@capsizecss/core": "4.1.3",
+    "@capsizecss/metrics": "4.4.0",
     "@electric-sql/pglite": "0.5.8",
     "@playwright/test": "1.64.0",
     "@tailwindcss/postcss": "4.3.3",
