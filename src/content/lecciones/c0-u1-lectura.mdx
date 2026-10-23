@@ -1,0 +1,164 @@
+{/*
+  Lectura de la unidad 0.1. Sale de las secciones 1 y 2 del apunte «¿Qué es la inteligencia artificial?»
+  (eva.academy/reports/Apunte concepto de inteligencia artificial.md, fuentes al 20-10-2026). Lo que el apunte marca
+  como no verificado (sección 12) va con «Por cotejar». Contenido jurídico pendiente de revisión docente.
+*/}
+
+## Tres programas, una pregunta
+
+Imagina tres programas en un estudio jurídico. Uno ordena los expedientes por fecha. Otro recomienda a qué casos
+dedicar más horas, a partir de lo que pasó con casos parecidos. El tercero redacta un borrador de recurso. Los tres
+son «software». Pero ante la ley sólo algunos serán **sistemas de inteligencia artificial**, y de esa frontera
+dependen prohibiciones, deberes de transparencia, multas y el derecho de una persona a que un humano revise la
+decisión que la afectó.
+
+<Nota>Por eso un abogado necesita la definición antes que la opinión: primero saber qué entra y qué no, y recién después discutir si está bien.</Nota>
+
+La definición importa aunque Chile todavía no tenga ley de IA. En julio de 2026 un programa automatizado ingresó
+más de 38.000 escritos en tres días a los tribunales civiles, y la Corte Suprema pidió un informe técnico para
+establecer si el sistema «realmente usaba IA».
+
+<Pendiente>
+  El caso de los 38.477 escritos se conoce sólo por prensa (Diario Constitucional, 28-07-2026); no se tuvo a la vista
+  el expediente ni el informe técnico.
+</Pendiente>
+
+«¿Es IA o sólo automatización?» ya decide, en la práctica, qué política se aplica y a quién se bloquea.
+
+## La definición que viaja de un texto a otro
+
+Desde noviembre de 2023 circula una definición que pasa casi palabra por palabra de un instrumento a otro. Nació en
+la OCDE, la organización que reúne a los países más industrializados (Chile es miembro desde 2010). Tuvo una primera
+versión en 2019 y se revisó en 2023 para cubrir la IA generativa, la que produce texto e imágenes.
+
+<Cita fuente={<>OCDE, definición revisada de «sistema de IA» (noviembre de 2023), original en inglés. <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/03/explanatory-memorandum-on-the-updated-oecd-definition-of-an-ai-system_3c815e51/623da898-en.pdf">Memorando explicativo, 2024 (PDF)</a></>}>
+  «An AI system is a machine-based system that, for explicit or implicit objectives, infers, from the input it
+  receives, how to generate outputs such as predictions, content, recommendations, or decisions that can influence
+  physical or virtual environments. Different AI systems vary in their levels of autonomy and adaptiveness after
+  deployment.»
+</Cita>
+
+Léela por partes. Es un sistema **basado en una máquina**. Tiene **objetivos**, que pueden ser explícitos (alguien
+se los dio) o implícitos (surgieron del entrenamiento). A partir de lo que recibe, **infiere** cómo producir
+**salidas**: predicciones, contenidos, recomendaciones o decisiones. Y esas salidas pueden **influir** en el mundo
+físico o en el virtual. Los distintos sistemas varían en **autonomía** (cuánto hacen sin intervención humana) y en
+**adaptabilidad** (si siguen cambiando después de puestos en servicio).
+
+<Nota>La OCDE declara de dónde sacó la idea: del manual universitario de Russell y Norvig, *Artificial Intelligence: A Modern Approach*. Volveremos a él en la unidad 0.3.</Nota>
+
+La palabra que separa los dos lados de la frontera es **infiere**. Un programa que sólo sigue reglas escritas por
+una persona («si la fecha es anterior, ponlo primero») no infiere nada: aplica. Un programa que aprendió de miles de
+casos anteriores a recomendar a cuál dedicar más horas sí infiere: nadie le escribió la regla; la obtuvo de los
+datos.
+
+## La única definición que hoy es ley
+
+La Unión Europea tomó la definición de la OCDE y la convirtió en ley con el Reglamento de Inteligencia Artificial.
+Es la única de las definiciones de esta unidad que hoy obliga como norma, y se aplica desde el 2 de febrero de 2025.
+
+<Cita fuente={<>Reglamento (UE) 2024/1689, art. 3, punto 1 (13 de junio de 2024), versión oficial en español. <a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2024-81079">BOE</a></>}>
+  «"sistema de IA": un sistema basado en una máquina que está diseñado para funcionar con distintos niveles de
+  autonomía y que puede mostrar capacidad de adaptación tras el despliegue, y que, para objetivos explícitos o
+  implícitos, infiere de la información de entrada que recibe la manera de generar resultados de salida, como
+  predicciones, contenidos, recomendaciones o decisiones, que pueden influir en entornos físicos o virtuales;»
+</Cita>
+
+Las leyes europeas llevan, antes del articulado, unos párrafos numerados que explican la intención: los
+**considerandos**. El considerando 12 es el que conviene retener, porque explica qué quiere decir «inferir» y qué
+queda fuera:
+
+<Cita fuente={<>Reglamento (UE) 2024/1689, considerando 12. <a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2024-81079">BOE</a></>}>
+  «Una característica principal de los sistemas de IA es su capacidad de inferencia. [...] La capacidad de inferencia
+  de un sistema de IA trasciende el tratamiento básico de datos, al permitir el aprendizaje, el razonamiento o la
+  modelización.»
+</Cita>
+
+El mismo considerando aclara que la definición no debe abarcar los «sistemas basados en las normas definidas
+únicamente por personas físicas». Es decir: el programa de reglas escritas a mano queda fuera; el que aprende de
+datos, dentro.
+
+<Pendiente>
+  La Comisión Europea publicó el 6 de febrero de 2025 unas directrices, no vinculantes, para interpretar la definición.
+  Según resúmenes de estudios jurídicos, excluirían «heurísticas clásicas» y la regresión lineal simple; esos detalles
+  deben cotejarse con el PDF de las directrices antes de enseñarlos como seguros.
+</Pendiente>
+
+## El tratado y el proyecto chileno
+
+El Consejo de Europa, una organización distinta de la Unión Europea y dedicada a los derechos humanos, firmó el 17 de
+mayo de 2024 el primer tratado internacional sobre IA: el Convenio Marco sobre Inteligencia Artificial y Derechos
+Humanos, Democracia y Estado de Derecho. Su art. 2 repite la definición de la OCDE de 2023, en inglés, casi letra por
+letra. Lo negociaron sus 46 Estados miembros, la Unión Europea y once Estados de fuera, entre ellos Argentina, Costa
+Rica, México, Perú y Uruguay.
+
+<Pendiente>
+  No se confirmó cuántos Estados lo han ratificado ni su fecha de entrada en vigor: una fuente decía que rige desde el
+  1 de noviembre de 2025 y otra que la Unión Europea lo ratificó el 15 de mayo de 2026.
+</Pendiente>
+
+Chile todavía no tiene ley. Tiene un **proyecto**: el que regula los sistemas de inteligencia artificial, Boletín
+16821-19, enviado por el Presidente al Congreso el 7 de mayo de 2024 y refundido con otro anterior. Su art. 3 n.º 1
+traduce la definición de la OCDE:
+
+<Cita fuente={<>Proyecto de ley que regula los sistemas de inteligencia artificial, Boletín 16821-19, Mensaje de 7 de mayo de 2024, art. 3 n.º 1. <a href="https://diarioconstitucional.cl/wp-content/uploads/2024/08/16821-19.pdf">Mensaje (PDF)</a></>}>
+  «Sistema de IA: sistema basado en máquinas que, por objetivos explícitos o implícitos infiere, a partir de la
+  entrada que recibe, cómo generar salidas tales como predicciones, contenidos, recomendaciones o decisiones que
+  pueden influir en entornos físicos o virtuales. Los distintos sistemas de IA pueden variar en sus niveles de
+  autonomía y adaptabilidad tras su implementación.»
+</Cita>
+
+El propio Mensaje lo reconoce: «la OCDE en 2023 ha provisto una definición actualizada de sistemas de IA que se basa
+en sus características funcionales». La Cámara de Diputadas y Diputados lo despachó al Senado el 13 de octubre de
+2025; al cierre del apunte estaba en segundo trámite, con urgencia simple.
+
+<Pendiente>
+  No se obtuvo el oficio de la Cámara del 13 de octubre de 2025, así que no consta si el art. 3 n.º 1 cambió en el
+  primer trámite. Tampoco se confirmó si la «ley marco» que el Ejecutivo anunció en 2026 ingresó como indicación ni
+  si toca la definición. Revisar en senado.cl y camara.cl antes de publicar.
+</Pendiente>
+
+## Dos caminos distintos: UNESCO y NIST
+
+No todos definieron. La UNESCO, en su Recomendación sobre la ética de la IA (23 de noviembre de 2021, aprobada por
+193 Estados), tomó el camino contrario:
+
+<Cita fuente={<>UNESCO, Recomendación sobre la ética de la inteligencia artificial (2021), párrafo 2. <a href="https://www.unesco.org/es/legal-affairs/recommendation-ethics-artificial-intelligence">Texto en español</a></>}>
+  «La presente Recomendación no pretende proporcionar una única definición de la IA, ya que tal definición tendría
+  que cambiar con el tiempo en función de los avances tecnológicos. [...] Por tanto, la presente Recomendación
+  considera los sistemas de IA sistemas capaces de procesar datos e información de una manera que se asemeja a un
+  comportamiento inteligente, y abarca generalmente aspectos de razonamiento, aprendizaje, percepción, predicción,
+  planificación o control.»
+</Cita>
+
+Y en Estados Unidos, el NIST (el instituto nacional de estándares) publicó en enero de 2023 un marco voluntario de
+gestión de riesgos que copió la versión anterior de la OCDE, la de 2019: un sistema «engineered or machine-based»
+que, para un conjunto de objetivos, genera predicciones, recomendaciones o decisiones que influyen en entornos reales
+o virtuales.
+
+## La tabla para comparar
+
+| Instrumento | Fecha | Naturaleza | Núcleo | ¿Exige «inteligencia»? | De dónde la toma |
+|---|---|---|---|---|---|
+| OCDE, Recomendación (revisada) | nov. 2023 | Recomendación, no vinculante | Sistema basado en máquinas que **infiere** cómo generar predicciones, contenidos, recomendaciones o decisiones | No | Russell y Norvig (2009) |
+| UE, Reglamento 2024/1689, art. 3.1 | jun. 2024 (rige desde feb. 2025) | **Ley vigente** | El mismo núcleo; añade «diseñado para funcionar con distintos niveles de autonomía» | No | OCDE 2023 |
+| Consejo de Europa, Convenio Marco, art. 2 | may. 2024 | Tratado (vigencia por confirmar) | Idéntico a la OCDE 2023 | No | OCDE 2023 |
+| Chile, Boletín 16821-19, art. 3 n.º 1 | may. 2024 | **Proyecto**, segundo trámite | Traducción casi literal de la OCDE 2023 | No | OCDE 2023 y Reglamento de la UE |
+| UNESCO, Recomendación, párr. 2 | nov. 2021 | Recomendación | Renuncia a definir; sistemas que procesan datos de un modo que «se asemeja» a un comportamiento inteligente | Sólo «se asemeja» | — |
+| NIST AI RMF 1.0 | ene. 2023 | Marco voluntario | Versión OCDE 2019 | No | OCDE 2019 |
+
+Dos observaciones. **Ninguna de estas definiciones define «inteligencia».** Definen un *sistema* por lo que produce
+y por cómo llega a producirlo. Es una decisión deliberada, y en la unidad 0.2 verás por qué: la ciencia nunca se puso
+de acuerdo sobre qué es la inteligencia, así que la ley definió por conducta.
+
+<Nota>Fíjate en la cadena de copias: OCDE 2019 → NIST 2023 → OCDE 2023 → UE 2024 → Consejo de Europa 2024 → Chile 2024. Las zonas grises se importan junto con el texto.</Nota>
+
+Y la segunda: si en Europa se discute si un programa de ajedrez con reglas clásicas o un cálculo estadístico simple
+«infieren», la misma discusión llegará a Chile con la misma frase. Quien lea «sistema de IA» en una ley chilena
+tendrá que leer también lo que Europa haya decidido sobre esas mismas palabras.
+
+## Lo que te llevas
+
+Un sistema de IA, para la ley, es un sistema basado en máquinas que, para objetivos explícitos o implícitos, infiere
+de lo que recibe cómo producir predicciones, contenidos, recomendaciones o decisiones que influyen en el mundo. La
+clave es «infiere»: aprende de datos en vez de aplicar reglas escritas por una persona. Nadie exigió que sea
+inteligente. Y de esa frontera, aparentemente técnica, cuelga todo lo demás: quién queda obligado y quién no.

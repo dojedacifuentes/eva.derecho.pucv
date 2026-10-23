@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "eva-derecho-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3130
+    },
+    {
+      "name": "eva-derecho-dev-3131",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["next", "dev", "--port", "3131"],
+      "port": 3131
+    }
+  ]
+}

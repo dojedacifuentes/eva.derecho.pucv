@@ -1,0 +1,129 @@
+{/*
+  Lectura de la unidad 0.3. Sale de la sección 4 del apunte «¿Qué es la inteligencia artificial?»
+  (eva.academy/reports/Apunte concepto de inteligencia artificial.md, fuentes al 20-10-2026). Lo que el apunte marca
+  como no verificado (sección 12) va con «Por cotejar». Pendiente de revisión docente.
+*/}
+
+## Si nadie define la inteligencia, ¿con qué nos quedamos?
+
+La ley esquiva la palabra «inteligencia» (unidad 0.1) y la ciencia no se pone de acuerdo sobre ella (unidad 0.2).
+Pero los ingenieros construyen sistemas de IA todos los días, así que algo asumen. Esta unidad reúne ese concepto de
+trabajo y, sobre todo, pone por escrito a qué precio lo aceptamos.
+
+## El agente que persigue objetivos
+
+El manual universitario de referencia, *Artificial Intelligence: A Modern Approach* de Stuart Russell y Peter Norvig,
+ordena las definiciones históricas de la IA en cuatro casillas, según dos preguntas: ¿se trata de **pensar** o de
+**actuar**? ¿Y de hacerlo **como un humano** o **racionalmente**? La Enciclopedia de Filosofía de Stanford sitúa al
+manual «firmemente» en la cuarta casilla, actuar racionalmente: la IA construye **agentes** que transforman
+percepciones en acciones, y una acción es racional si cabe esperar que logre el objetivo.
+
+<Pendiente>
+  Los cuatro cuadrantes se verificaron en la Enciclopedia de Stanford, no en el manual de Russell y Norvig.
+</Pendiente>
+
+<Nota>Un «agente», en este sentido técnico, es cualquier cosa que percibe su entorno y actúa sobre él: un termostato es un agente muy simple. No confundir con el «agente de IA» comercial de la unidad 0.2.</Nota>
+
+Legg y Hutter, los que juntaron setenta definiciones, destilaron una propia para las máquinas:
+
+<Cita fuente={<>Legg y Hutter (2007), «Universal Intelligence: A Definition of Machine Intelligence». <a href="https://arxiv.org/pdf/0712.3329">arXiv:0712.3329 (PDF)</a></>}>
+  «Intelligence measures an agent's ability to achieve goals in a wide range of environments.»
+</Cita>
+
+Lograr objetivos, y no en un solo ambiente sino en muchos. François Chollet añade un matiz que viste en la unidad
+anterior: no cuenta la destreza en una tarea, que se puede «comprar» con datos ilimitados, sino la **eficiencia** con
+que se adquiere.
+
+Falta el **cómo**. Richard Sutton, uno de los padres del aprendizaje por refuerzo, lo resumió en 2019 en un texto
+breve y muy citado, «La lección amarga»:
+
+<Cita fuente={<>Sutton (2019), «The Bitter Lesson». <a href="http://www.incompleteideas.net/IncIdeas/BitterLesson.html">incompleteideas.net</a></>}>
+  «The biggest lesson that can be read from 70 years of AI research is that general methods that leverage computation
+  are ultimately the most effective, and by a large margin.»
+</Cita>
+
+Es decir: durante décadas los investigadores intentaron escribirle a la máquina lo que ellos sabían; lo que terminó
+funcionando fue darle métodos generales, muchos datos y mucho cómputo. Que el desempeño mejore cuando crece el cómputo
+es una regularidad observada en muchos experimentos, no una teoría que lo explique.
+
+## La definición de trabajo
+
+Juntando las piezas, lo que podemos asumir desde la ingeniería es esto:
+
+<Cita fuente="Definición de trabajo del curso (apunte «¿Qué es la inteligencia artificial?», sección 4). Funde a Russell y Norvig, Legg y Hutter, Chollet y la definición clásica de aprender en aprendizaje automático.">
+  Lo propio de la IA es **la capacidad de un sistema para lograr objetivos en una gama amplia de situaciones, adquirida
+  a partir de datos y cómputo, y juzgada por su desempeño medible.**
+</Cita>
+
+Léela de nuevo con las cuatro fuentes a la vista: *lograr objetivos* (Russell y Norvig: agente racional), *en una
+gama amplia de situaciones* (Legg y Hutter), *adquirida a partir de datos y cómputo* (Sutton, y la definición clásica
+de «aprender» en aprendizaje automático: mejorar el desempeño en una tarea con la experiencia), *juzgada por su
+desempeño medible* (Chollet y los bancos de prueba).
+
+<Pendiente>
+  La definición clásica de «aprender» se atribuye a Tom Mitchell (1997) por fuentes secundarias, no por el manual.
+</Pendiente>
+
+Es compatible con la definición legal, que tampoco exige inteligencia. Y tiene una virtud para el jurista: habla de
+**acciones**, que se observan, no de **mente**, que no se observa. Un tribunal puede probar lo que un sistema hizo;
+no puede probar lo que «pensó».
+
+## Las seis concesiones
+
+La definición sólo es honesta si declara lo que no sabe. Son seis concesiones. Cada una tiene un nombre, un origen y
+una consecuencia jurídica.
+
+**1. Definimos por conducta, no por experiencia interior.** Lo decidió Alan Turing en 1950: en vez de preguntar
+«¿pueden pensar las máquinas?» propuso un juego que juzga la conversación, no los estados internos. John Searle
+mostró el costo con su **habitación china** (1980): una persona encerrada que sigue un manual de reglas para
+responder en chino sin saber chino produce respuestas correctas sin entender nada. Su conclusión: «Syntax is not by
+itself sufficient for, nor constitutive of, semantics». La forma no basta para el significado. La ingeniería no tiene
+instrumento para esa pregunta, y sus propios trabajos sobre introspección (unidad 0.2) lo dicen expresamente.
+
+<Nota>Consecuencia: ningún resultado conductual, por bueno que sea, prueba comprensión. El Derecho tendrá que decidir qué hacer con eso sin esperar que la ciencia lo resuelva.</Nota>
+
+**2. «Inteligencia» es relativa a objetivos y a métricas.** Con datos ilimitados se «compra» cualquier destreza
+(Chollet). Y una «capacidad emergente», un salto repentino al crecer el modelo, puede ser un artefacto de cómo se
+mide: las mismas salidas parecen un salto si la medida es de todo o nada, y una mejora suave si la medida es
+continua. Lo mostró un estudio de 2023 (Schaeffer y otros) contra otro de 2022 (Wei y otros) que había popularizado
+las «emergencias».
+
+**3. La evidencia viene de bancos de prueba que se saturan, se contaminan y dibujan un perfil dentado.** Un banco de
+programación, SWE-bench Verified, «rose from 60% to near 100% in a single year», según el Índice de Stanford de 2026:
+cuando todos sacan cien, el examen ya no distingue. Los modelos pueden haber visto las preguntas durante el
+entrenamiento (contaminación). Y muchos bancos permiten «atajos» que dan alto puntaje sin aprender la destreza que se
+pretendía medir. Para el Derecho, lo decisivo es que la responsabilidad se juega en el uso real, donde la prueba no
+predice.
+
+**4. No sabemos si «entienden», y la comunidad está dividida por la mitad** (51 contra 49, unidad 0.2). Quizá la
+pregunta esté mal planteada: Mitchell y Krakauer piden «an extended science of intelligence» que distinga modos de
+comprensión en vez de un sí o un no.
+
+**5. El vocabulario antropomórfico es metáfora de trabajo.** «Aprende», «razona», «alucina», «sabe». Murray Shanahan
+advierte que términos como «knows», «believes» o «thinks» intensifican el antropomorfismo y propone «repeatedly
+stepping back», dar un paso atrás una y otra vez, para recordar cómo funcionan los modelos. Mitchell lo llama «the
+lure of wishful mnemonics»: la tentación de los nombres que prometen más de lo que hay. La evidencia mecanicista lo
+respalda: lo que el modelo dice de su razonamiento no coincide, la mayoría de las veces, con lo que hizo.
+
+<Nota>Esta es la concesión que más importa en Derecho. «Decide», «sabe» e «intención» son categorías jurídicas, con consecuencias (dolo, culpa, responsabilidad). El sistema no las satisface por el solo hecho de que así lo describamos.</Nota>
+
+**6. La vara se mueve: el «efecto IA».** En cuanto algo funciona, deja de llamarse IA. Hoy las directrices europeas
+excluirían «heurísticas clásicas» que en 1970 eran la IA entera. Una definición escrita sobre la técnica de hoy (la
+«inferencia») envejecerá como envejecieron las anteriores. En la unidad 0.4 verás la historia de este efecto.
+
+## Por qué las concesiones no debilitan la definición
+
+Parece que seis concesiones dejan poco en pie. Es al revés: la hacen defendible. Una definición conductual
+sobrevive a Searle porque no afirma que el sistema entienda; sobrevive a Schaeffer porque no afirma que haya
+emergencias; y sobrevive al efecto IA porque no se casa con una técnica. Lo único que exige es que, cada vez que se
+diga que un sistema es «capaz» de algo, se declare **con qué métrica** y **en qué situaciones** se midió.
+
+<Nota>Un informe pericial que diga «el sistema tiene una precisión del 95 %» sin decir en qué prueba, con qué datos y cuándo, no cumple ni la concesión 2 ni la 3. Es la primera pregunta que un abogado debería hacer.</Nota>
+
+## Lo que te llevas
+
+La IA, desde la ingeniería, es la capacidad de lograr objetivos en muchas situaciones, adquirida de datos y cómputo
+y juzgada por desempeño medible. Esa definición habla de lo que se ve. Para usarla con honestidad hay que conceder
+seis cosas: que medimos conducta y no experiencia; que «inteligencia» depende de la métrica; que las pruebas se
+saturan y no predicen el uso real; que no sabemos si entienden; que «sabe» y «razona» son metáforas; y que la vara se
+mueve. Con esas seis concesiones en la mano, la definición resiste. Sin ellas, es publicidad.

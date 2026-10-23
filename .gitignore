@@ -1,0 +1,18 @@
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+.vercel
+.env*
+!.env.example
+test-results/
+playwright-report/
+
+# Medios en bruto: no van en el repositorio. Copia de seguridad en el escritorio y en Google Drive
+# («EVA Derecho PUCV - medios en bruto»). En el repositorio quedan sólo los textos (REGISTRO.md, STORYBOARD.md, lamina.html).
+media/**
+!media/**/
+!media/**/*.md
+!media/**/*.html
+!media/**/*.txt

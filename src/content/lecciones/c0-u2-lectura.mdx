@@ -1,0 +1,154 @@
+{/*
+  Lectura de la unidad 0.2. Sale de la sección 3 del apunte «¿Qué es la inteligencia artificial?»
+  (eva.academy/reports/Apunte concepto de inteligencia artificial.md, fuentes al 20-10-2026). Lo que el apunte marca
+  como no verificado (sección 12) va con «Por cotejar». Pendiente de revisión docente.
+*/}
+
+## Por qué la ley definió por conducta
+
+En la unidad anterior viste que las leyes definen un «sistema de IA» por lo que hace, no por si es inteligente. La
+razón es simple: la ciencia nunca logró definir la inteligencia por su esencia. En 2007 dos investigadores, Shane
+Legg y Marcus Hutter, reunieron unas setenta definiciones de inteligencia y abrieron su artículo con una confesión:
+
+<Cita fuente={<>Legg y Hutter (2007), «A Collection of Definitions of Intelligence» y «Universal Intelligence». <a href="https://arxiv.org/abs/0706.3639">arXiv:0706.3639</a> · <a href="https://arxiv.org/abs/0712.3329">arXiv:0712.3329</a></>}>
+  «A fundamental problem in artificial intelligence is that nobody really knows what intelligence is.»
+</Cita>
+
+John McCarthy, el científico que inventó el nombre «inteligencia artificial» en 1955, respondía en 2007 a si existe
+una definición de inteligencia que no dependa de la humana con dos palabras: «Not yet». Todavía no.
+
+<Nota>Esta unidad recorre cinco dudas que siguen abiertas. No vas a resolverlas. Vas a aprender a reconocerlas cuando aparezcan disfrazadas de certezas.</Nota>
+
+## Primera duda: ¿«entiende»?
+
+Desde 2022 la disputa cambió de objeto. Ya no se discute tanto qué es la inteligencia, sino si los **grandes modelos
+de lenguaje** (los sistemas detrás de ChatGPT, Claude o Gemini) entienden lo que dicen. Melanie Mitchell y David
+Krakauer resumieron los dos bandos: uno sostiene que estos modelos realmente entienden el lenguaje y razonan de
+manera general; el otro, que no pueden entender porque no tienen experiencia ni modelos mentales del mundo.
+
+Una encuesta de 2022 a 480 investigadores del área dio un empate: **51 % de acuerdo y 49 % en desacuerdo** con que un
+modelo entrenado sólo con texto pueda entender el lenguaje en algún sentido no trivial.
+
+<Cita fuente={<>Mitchell y Krakauer (2022), «The Debate Over Understanding in AI's Large Language Models». <a href="https://arxiv.org/abs/2210.13966">arXiv:2210.13966</a></>}>
+  51 % de acuerdo · 49 % en desacuerdo, entre 480 investigadores, sobre si un modelo entrenado sólo con texto puede
+  entender en «some non-trivial sense».
+</Cita>
+
+La posición escéptica tiene una imagen famosa: la **prueba del pulpo**. Emily Bender y Alexander Koller imaginaron un
+pulpo muy inteligente que intercepta un cable submarino por el que se escriben dos náufragos. A fuerza de leer sus
+mensajes, el pulpo aprende a imitar las respuestas de uno de ellos. Funciona hasta que el náufrago pide ayuda
+práctica, por ejemplo cómo construir una catapulta con cocos: el pulpo nunca vio un coco y fracasa, porque no puede
+conectar sus palabras con el mundo. De ahí su conclusión: un sistema entrenado sólo con la **forma** del lenguaje no
+tiene, de entrada, manera de aprender su **significado**. Y de ahí la etiqueta «loro estocástico»: un modelo de
+lenguaje ensambla formas lingüísticas según probabilidades de cómo se combinan, sin referencia al significado.
+
+<Nota>«Estocástico» quiere decir «probabilístico, al azar». El loro repite lo que oyó; el loro estocástico combina lo que leyó según lo que es más probable.</Nota>
+
+Quienes discrepan responden que, para predecir bien la palabra siguiente en miles de millones de textos, el modelo
+tiene que haber construido algo parecido a un modelo del mundo. El empate de la encuesta refleja que ninguna de las
+dos partes tiene una prueba que la otra acepte.
+
+## Segunda duda: ¿«razona»?
+
+En 2024 y 2025 el debate se repitió con otra palabra: **razonar**. Aparecieron los «modelos razonadores», entrenados
+para producir una «cadena de pensamiento» (una serie de pasos intermedios escritos) antes de responder. En junio de
+2025 un equipo de Apple publicó un estudio con un título provocador, «La ilusión del pensamiento»: con rompecabezas
+cuya dificultad se puede subir a voluntad, estos modelos sufren un colapso completo de precisión a partir de cierta
+complejidad. La réplica llegó en días: el colapso reflejaría el diseño del experimento, que limitaba cuánto texto
+podía escribir el modelo y contaba como fallos instancias matemáticamente imposibles.
+
+<Pendiente>
+  El estudio de Apple y la réplica de Lawsen (arXiv:2506.09250) se citan por sus resúmenes, no por el texto completo.
+</Pendiente>
+
+La lección para un jurista no está en quién ganó. **La disputa no era sobre los datos sino sobre qué cuenta como
+prueba.** Es la misma estructura que un debate probatorio en un juicio: las partes ven los mismos hechos y discuten
+qué demuestran.
+
+## Lo que se ve mirando adentro
+
+Lo más nuevo es que los laboratorios empezaron a mirar dentro de la máquina. En marzo de 2025 Anthropic publicó
+«grafos de atribución», una técnica para seguir qué representa internamente el modelo mientras responde. Ante la
+pregunta «¿cuál es la capital del estado donde está Dallas?», el modelo representa internamente *Texas* antes de
+responder *Austin*: hay un paso intermedio real. Pero el mismo trabajo encontró que la explicación verbal que da el
+modelo sobre cómo sumó dos números **no coincide** con los pasos internos observados, y que la herramienta sólo dio
+información útil en alrededor de una cuarta parte de los casos.
+
+Otro estudio halló que, cuando se le da una pista a un modelo razonador, la menciona en su «razonamiento» escrito
+sólo el 25 % de las veces (Claude 3.7 Sonnet) o el 39 % (DeepSeek R1). La conclusión de los propios autores:
+
+<Cita fuente={<>Anthropic (abril de 2025), «Reasoning models don't always say what they think». <a href="https://www.anthropic.com/research/reasoning-models-dont-say-think">anthropic.com</a></>}>
+  «we can't always rely on what they tell us about their reasoning»
+</Cita>
+
+<Nota>Guarda esta idea para la unidad 0.4: cuando un tribunal pregunte «¿por qué el sistema dijo esto?», la explicación que el sistema escribe no es una prueba de lo que hizo.</Nota>
+
+Y un experimento de «inyección de conceptos» (introducir artificialmente una idea en el estado interno del modelo y
+preguntarle si nota algo) mostró que los modelos la detectan alrededor del 20 % de las veces: una capacidad «highly
+unreliable» que, dicen los autores, no establece si los modelos tienen autoconciencia o experiencia subjetiva.
+
+<Pendiente>
+  De «On the Biology of a Large Language Model» se leyó poco más de la mitad; las cifras del 25 % y 39 % y la del
+  20 % vienen de las publicaciones de Anthropic citadas en el apunte.
+</Pendiente>
+
+## Tercera duda: ¿qué es la AGI y quién la declara?
+
+AGI son las siglas en inglés de «inteligencia artificial general»: una IA que pudiera hacer, en general, lo que hace
+una persona. Hay tres maneras de definirla y ninguna es una ley.
+
+**Por capacidades.** Google DeepMind propuso en 2023 cinco niveles bajo el principio «Focus on Capabilities, not
+Processes»: importa lo que el sistema logra, no cómo. Aclaró que los sistemas de AGI «need not necessarily think or
+understand in a human-like way». Según esa escala, ChatGPT y sus pares serían «Emerging AGI» (nivel 1) y el nivel 2,
+«Competent», no se había alcanzado.
+
+**Por eficiencia de aprendizaje.** François Chollet sostiene que ninguna destreza aislada demuestra inteligencia,
+porque con datos ilimitados se puede «comprar» cualquier nivel de destreza en una tarea. Lo que cuenta es la
+capacidad de adquirir destrezas nuevas con pocos ejemplos. Su banco de pruebas, ARC-AGI, llegó en 2026 a una
+versión interactiva para agentes.
+
+<Pendiente>
+  Sobre ARC-AGI-3 hay un conflicto de datos no resuelto: prensa de marzo y abril de 2026 situaba a los mejores
+  modelos bajo el 0,4 %, y la tabla oficial leída por herramienta automática el 20-10-2026 mostraba hasta 99,95 %. El
+  apunte no cita cifras; confirmar en el navegador antes de usar alguna.
+</Pendiente>
+
+**Por contrato.** En el extremo opuesto, la AGI es una cláusula. Desde el acuerdo revisado entre Microsoft y OpenAI
+del 28 de octubre de 2025, cuando OpenAI declare que alcanzó la AGI, «that declaration will now be verified by an
+independent expert panel», y de esa verificación dependen derechos de propiedad intelectual y de participación en
+ingresos.
+
+<Nota>Aquí está la idea que ordena toda la unidad: **definir no es describir el mundo sino repartir poderes.** Quien controla la definición de AGI controla cuándo cambian los derechos de las partes.</Nota>
+
+## Cuarta duda: la frontera dentada
+
+Imaginamos la inteligencia como una escalera: quien está en un peldaño alto puede hacer todo lo de los peldaños
+bajos. Con la IA no funciona así. El Informe Internacional de Seguridad de la IA de 2026 constata que los sistemas
+líderes igualan o superan el nivel de expertos en evaluaciones estandarizadas, pero que el desempeño en pruebas
+previas al despliegue «does not reliably predict real-world utility or risk» y sigue siendo «jagged»: dentado.
+
+El Índice de IA de Stanford de 2026 lo ilustra con un contraste: un modelo gana medalla de oro en la Olimpiada
+Internacional de Matemática mientras el mejor modelo lee bien un reloj analógico sólo el 50,1 % de las veces.
+
+<Pendiente>
+  La fecha de publicación del Índice de Stanford 2026 (13 de abril) viene de cobertura secundaria; las cifras, del
+  informe.
+</Pendiente>
+
+Para el Derecho esto importa más que cualquier debate filosófico: que un sistema apruebe un examen no dice que vaya a
+acertar en tu caso. La responsabilidad se juega en el uso real, donde la prueba no predice.
+
+## Quinta duda: los agentes
+
+Un **agente de IA**, en el uso de 2025 y 2026, es un sistema que ejecuta tareas de varios pasos con autonomía: abre
+páginas, llena formularios, encadena acciones. No tiene definición oficial en ninguna ley. El Reglamento europeo y el
+proyecto chileno los cubren sólo de manera indirecta: por los «niveles de autonomía» de la definición general y, en
+la Unión Europea, por la categoría de «modelo de IA de uso general» (art. 3, punto 63). Cuando leas «agente» en una
+noticia o en un contrato, pregunta qué hace exactamente y quién responde por lo que hace.
+
+## Lo que te llevas
+
+Cinco dudas abiertas: si se puede definir la inteligencia, si los modelos entienden, si razonan, qué es la AGI y
+quién la declara, y por qué el desempeño es dentado. En ninguna hay acuerdo. Lo que sí hay es una regularidad: cada
+vez que alguien afirma que «la IA entiende», «razona» o «ya es general», hay que preguntar qué contaría como prueba y
+quién gana con la respuesta. Esa pregunta es, exactamente, la que un abogado sabe hacer.
